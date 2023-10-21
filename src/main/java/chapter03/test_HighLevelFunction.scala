@@ -7,7 +7,10 @@ object test_HighLevelFunction {
       n + 1
     }
 
+
+
     val res: Int = f(5)
     println(res)
+
   }
 }
