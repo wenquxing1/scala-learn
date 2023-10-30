@@ -5,7 +5,27 @@ object test_TraitOverLying {
     val student15 = new Student15
     student15.dancing()
     student15.increase()
+
+    // 钻石问题特征叠加
+    val myball = new MyBasketball
+    println(myball.describe())
   }
+}
+
+trait Ball{
+  def describe(): String = "ball"
+}
+trait ColorBall extends Ball{
+  val color:String = "Red"
+  override def describe(): String = color + "--" + super.describe()
+}
+trait CatagoryBall extends Ball{
+  val catagory: String = "basketball"
+
+  override def describe(): String = catagory + "--" + super.describe()
+}
+class MyBasketball extends CatagoryBall with ColorBall{
+  override def describe(): String = "my ball is a " + super[CatagoryBall].describe()
 }
 trait Knowledge15{
   var amount: Int = 0
