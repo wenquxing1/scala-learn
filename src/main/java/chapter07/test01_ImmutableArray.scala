@@ -4,7 +4,8 @@ object test01_ImmutableArray {
   def main(args: Array[String]): Unit = {
     val arr = new Array[Int](5)
     val arr1 =  Array(1,2,3)
-    println(arr(0))
+    println(arr1)
+
     println(arr(4))
     println(arr1(2))
 
